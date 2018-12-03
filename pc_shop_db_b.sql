@@ -53,6 +53,8 @@ create table sold_product(
 id int not null primary key auto_increment,
 bill_id int not null,
 product_id int not null,
+quantity int not null,
+price decimal(18,2),
 foreign key (bill_id) REFERENCES bill(id),
 foreign key (product_id) REFERENCES product(id)
 );
@@ -84,9 +86,9 @@ insert into bill (id,employee_id,location_id,company_id,datetime_sold) values
 (null,1,2,1,'2018-11-24 16:24:30'),
 (null,2,1,1,'2018-11-24 18:20:40');
 
-insert into sold_product (id,bill_id,product_id) values
-(null,1,1),
-(null,1,4),
-(null,2,2),
-(null,2,3),
-(null,2,5);
+insert into sold_product (id,bill_id,product_id,quantity,price) values
+(null,1,1,2,300.00),
+(null,1,4,1,200.00),
+(null,2,2,1,300.00),
+(null,2,3,1,1500.00),
+(null,2,5,1,4500.00);
